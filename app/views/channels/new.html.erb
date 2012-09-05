@@ -1,0 +1,7 @@
+<%= simple_form_for @channel, :html => { :multipart => true } do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f } %>
+	<span>
+		<%= f.submit '创建', :class => 'btn btn-primary' %>
+		<%= link_to '返回', channels_path, :class => 'btn' %>
+	</span>
+<% end %>

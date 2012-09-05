@@ -1,0 +1,19 @@
+zh-CN:
+  activerecord:
+    models:
+      user: 用户
+      channel: 频道
+      category: 分类
+    attributes:
+      user:
+        email: 邮箱
+        password: 密码
+      channel:
+        name: 名称
+        num: 频道号
+        logo: 台标 
+      category:
+        name: 名称
+
+
+

@@ -1,0 +1,9 @@
+<% if @category.errors.any? %>
+	<ul class="error">
+		<% @category.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>	
+		<% end %>
+	</ul>
+<% end %>
+
+<%= f.input :name %>

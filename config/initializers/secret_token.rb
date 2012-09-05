@@ -1,0 +1,2 @@
+
+Mportal::Application.config.secret_token = '9eca6f797ce1c334ce7a1b6a51f5ae43e4df9eefd2383aa5bdfc8e65e7d2ec68e97c8f021b6f1b16395be8a3561516574be4679f61ffd99cd5bf170094b38500'

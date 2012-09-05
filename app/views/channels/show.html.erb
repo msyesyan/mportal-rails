@@ -1,0 +1,39 @@
+<h1>频道详细</h1>
+
+<div id="product_list">
+	<table>
+		<caption><br /></caption>
+		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+			<td>
+				<%= image_tag @channel.logo %>
+			</td>
+
+			<td class="list_description">
+				<dl>
+					<dt>
+						<p>
+							<b>频道:</b>
+							<%= @channel.name%>
+						</p>
+					</dt>
+					<dt>
+						<p>
+							<b>频道号:</b>
+							<%= @channel.num%>
+						</p>
+					</dt>
+					<dt>
+						<p>
+							<b>所属频道:</b>
+							<% @channel.categories.each do |ca| %>
+							<%= ca.name %> &nbsp;
+							<% end %>
+						</p>
+					</dt>
+				</dl>
+			</td>
+	</table>
+</div>
+
+<%= link_to 'Edit', edit_channel_path(@channel), :class => 'btn btn-primary' %>
+<%= link_to 'Back', channels_path, :class => 'btn btn-primary' %>

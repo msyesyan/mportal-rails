@@ -1,0 +1,32 @@
+<%= paginate @categories %>
+<div class="container">
+	<h2>分类列表</h2>
+	<table class="table table-bordered">
+		<caption><br></caption>
+		<thead>
+			<tr>
+				<th>分类名称</th>
+				<th>包含频道</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @categories.each do |category| %>
+			<tr>
+				<td><%= category.name %></td>
+				<td>
+					<% category.channels.each do |ch| %>
+						<%= ch.name %>
+					<% end %>
+				</td>
+				<td>
+					<%= link_to '编辑', edit_category_path(category) %>
+					<%= link_to '删除', category_path(category), :method => 'delete' %>	
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= link_to '新建', new_category_path, :class => 'btn btn-primary' %>
+</div>
+</div>

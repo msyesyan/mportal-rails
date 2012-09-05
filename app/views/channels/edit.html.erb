@@ -1,0 +1,13 @@
+<h1>Edit Channel</h1>
+<%= simple_form_for @channel, :html => { :multipart => true } do |f| %>
+<br/>
+<%= render :partial => 'form', :locals => {:f => f} %>
+<%= f.input :category_ids do %>
+  <%= f.select :category_ids, Category.all.map { |r| [r.name, r.id] }, {:include_blank => false}, { :multiple => true, :size => 3 } %><br />
+<% end %>
+<span>
+	<%= f.submit '提交', :class => 'btn btn-primary' %>
+	<%= link_to 'back', channels_path, :class => 'btn' %>
+</span>
+
+<% end %>

@@ -1,0 +1,34 @@
+<%= paginate @channels %>
+<div class="container">
+	<h2>频道列表</h2>
+	<table class="table table-bordered">
+		<caption><br></caption>
+		<thead>
+			<tr>
+				<th>频道名称</th>
+				<th>所属分类</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<% @channels.each do |channel| %>
+			<tr>
+				<td><%= channel.name %></td>
+				<td>
+					<% channel.categories.select(:name).each do |ca| %>
+					<%= ca.name %> &nbsp;
+					<% end %>
+				</td>
+				<td>
+					<%= link_to '详细', channel_path(channel) %>
+					<%= link_to '编辑', edit_channel_path(channel) %>
+					<%= link_to '删除', channel_path(channel), :method => 'delete' %>	
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= link_to '新建', new_channel_path, :class => 'btn btn-primary' %>
+</div>
+</div>
