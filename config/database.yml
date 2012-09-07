@@ -10,3 +10,11 @@ development:
   encoding: unicode
   username: postgres
   pssword: postgres
+
+production:
+  adapter: postgresql
+  database: mportal
+  pool: 5
+  encoding: unicode
+  username: postgres
+  pssword: postgres
